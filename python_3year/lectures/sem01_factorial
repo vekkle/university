@@ -1,0 +1,22 @@
+import doctest
+import pytest #посмотреть самостоятельно
+
+def factorial(n):
+    """
+        This function calculates the factorial of an integer number.
+    >>> factorial(0)
+	1
+	>>> factorial(5)
+	120
+	>>> [factorial(i) for i in range(6)]
+	[1, 1, 2, 6, 24, 120]
+	"""		
+	if n < 0:
+        raise ValueError('Argument n must be non-negative!')
+    if not isinstance(n , int):
+        raise ValueError('Argument n must be integer!')
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
